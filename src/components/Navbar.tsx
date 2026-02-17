@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -31,14 +32,19 @@ const Navbar = () => {
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group relative z-[60]">
-                    <motion.img
-                        src="/logoely.webp"
-                        alt="Miss Ely Logo"
-                        width={168}
-                        height={82}
-                        className="h-16 md:h-24 w-auto object-contain"
+                    <motion.div
                         whileHover={{ scale: 1.05 }}
-                    />
+                        className="relative h-16 md:h-24 w-40 md:w-56"
+                    >
+                        <Image
+                            src="/logoely.webp"
+                            alt="Miss Ely Logo"
+                            fill
+                            priority
+                            className="object-contain"
+                            sizes="(max-width: 768px) 160px, 224px"
+                        />
+                    </motion.div>
                 </Link>
 
                 {/* Desktop Menu */}

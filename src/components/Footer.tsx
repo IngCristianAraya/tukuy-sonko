@@ -1,5 +1,6 @@
 import { Instagram, Facebook, Mail, Phone, Heart } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,13 +15,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 text-center md:text-left">
           <div className="col-span-1 lg:col-span-1 flex flex-col items-center md:items-start">
             <Link href="/" className="block mb-8">
-              <img
-                src="/logoely.webp"
-                alt="Miss Ely Logo"
-                className="h-24 md:h-32 w-auto object-contain"
-              />
+              <div className="relative h-24 md:h-32 w-48 md:w-64">
+                <Image
+                  src="/logoely.webp"
+                  alt="Miss Ely Logo"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 192px, 256px"
+                />
+              </div>
             </Link>
-            <p className="text-gray-600 font-bold leading-tight mb-10 text-lg max-w-sm">
+            <p className="text-gray-700 font-bold leading-tight mb-10 text-lg max-w-sm">
               Llevando magia y aprendizaje a cada rincón. Especialista en
               educación inicial y animación de eventos infantiles.
             </p>
