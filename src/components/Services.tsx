@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+import Image from "next/image";
+
 import {
   Home,
   UserRound,
@@ -19,6 +21,7 @@ const services = [
     description: "Aprendizaje lúdico y contacto directo con la naturaleza para el desarrollo motriz.",
     icon: <Home size={32} />,
     color: "bg-brand-naranja",
+    image: "/nueva1f.webp",
     href: "/reserva"
   },
   {
@@ -26,6 +29,7 @@ const services = [
     description: "Talleres divertidos para potenciar la confianza y creatividad infantil.",
     icon: <UserRound size={32} />,
     color: "bg-brand-lila",
+    image: "/nueva2f.webp",
     href: "/reserva"
   },
   {
@@ -33,6 +37,7 @@ const services = [
     description: "Experimentos sorprendentes y seguros para pequeños científicos curiosos.",
     icon: <FlaskConical size={32} />,
     color: "bg-brand-verde_claro",
+    image: "/nueva3f.webp",
     href: "/reserva"
   },
   {
@@ -40,6 +45,7 @@ const services = [
     description: "Movimiento y psicomotricidad a través del juego y la música.",
     icon: <Baby size={32} />,
     color: "bg-brand-rosa",
+    image: "/nueva4f.webp",
     href: "/reserva"
   },
   {
@@ -47,6 +53,7 @@ const services = [
     description: "Shows temáticos y divertidos para cumpleaños y fiestas infantiles.",
     icon: <PartyPopper size={32} />,
     color: "bg-brand-rojo",
+    image: "/nueva1f.webp",
     href: "/reserva"
   },
   {
@@ -54,6 +61,7 @@ const services = [
     description: "Momentos tiernos y juegos pensados para toda la familia y amigos.",
     icon: <Gamepad2 size={32} />,
     color: "bg-brand-celeste",
+    image: "/nueva2f.webp",
     href: "/reserva"
   }
 ];
@@ -108,23 +116,46 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white border-[6px] border-gray-50 rounded-[4rem] p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 group flex flex-col items-center text-center"
+                className="bg-white border-[6px] border-gray-50 rounded-[4rem] p-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 group flex flex-col items-center text-center overflow-hidden"
               >
-                <div className={`w-24 h-24 ${colorClass} text-white rounded-[2rem] flex items-center justify-center mb-8 shadow-2xl group-hover:rotate-[15deg] transition-all duration-500`}>
-                  <div className="scale-150">{service.icon}</div>
+                {/* Image Container with Floating Icon */}
+                <div className="relative w-full h-64 mb-8 group-hover:scale-105 transition-transform duration-500">
+                  <div className="absolute inset-0 rounded-[3rem] overflow-hidden border-4 border-white shadow-xl z-10">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Color Overlay */}
+                    <div className={`absolute inset-0 ${colorClass} opacity-10 group-hover:opacity-0 transition-opacity`} />
+                  </div>
+
+                  {/* Floating Icon Badge */}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.3 + index * 0.1, type: "spring" }}
+                    className={`absolute -bottom-4 -right-2 w-20 h-20 ${colorClass} text-white rounded-[1.5rem] flex items-center justify-center shadow-2xl z-20 border-4 border-white group-hover:rotate-12 transition-all duration-500`}
+                  >
+                    {service.icon}
+                  </motion.div>
                 </div>
 
-                <h3 className="text-3xl font-black text-brand-dark mb-4 tracking-tighter leading-none">{service.title}</h3>
-                <p className="text-gray-600 font-bold mb-10 leading-snug">
-                  {service.description}
-                </p>
+                <div className="mt-4 w-full">
+                  <h3 className="text-3xl font-black text-brand-dark mb-4 tracking-tighter leading-none">{service.title}</h3>
+                  <p className="text-gray-600 font-bold mb-8 leading-snug">
+                    {service.description}
+                  </p>
 
-                <Link
-                  href={service.href}
-                  className={`mt-auto btn-premium ${colorClass} text-white w-full shadow-2xl group-hover:scale-105 active:translate-y-2`}
-                >
-                  <span className="text-xl">¡Reservar Ahora!</span>
-                </Link>
+                  <Link
+                    href={service.href}
+                    className={`btn-premium ${colorClass} text-white w-full shadow-2xl group-hover:scale-105 active:translate-y-2 py-4 rounded-[2rem] flex items-center justify-center gap-2`}
+                  >
+                    <span className="text-xl font-black">Reserva Mágica</span>
+                    <ChevronRight size={20} />
+                  </Link>
+                </div>
               </motion.div>
             );
           })}

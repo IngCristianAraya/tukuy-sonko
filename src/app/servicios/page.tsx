@@ -17,6 +17,7 @@ import {
     Sparkles,
     Heart
 } from "lucide-react";
+import Image from "next/image";
 
 const fullServices = [
     {
@@ -30,6 +31,7 @@ const fullServices = [
             "Grupos reducidos para atención personalizada."
         ],
         icon: <Home size={40} />,
+        image: "/nueva1f.webp",
         color: "text-brand-leaf",
         bgColor: "bg-brand-leaf/10",
         border: "border-brand-leaf/20"
@@ -45,6 +47,7 @@ const fullServices = [
             "Presentaciones amigables para fortalecer la autoestima."
         ],
         icon: <UserRound size={40} />,
+        image: "/nueva2f.webp",
         color: "text-brand-joy",
         bgColor: "bg-brand-joy/10",
         border: "border-brand-joy/20"
@@ -60,6 +63,7 @@ const fullServices = [
             "Kit de materiales incluidos para cada sesión."
         ],
         icon: <FlaskConical size={40} />,
+        image: "/nueva3f.webp",
         color: "text-brand-sky",
         bgColor: "bg-brand-sky/10",
         border: "border-brand-sky/20"
@@ -75,6 +79,7 @@ const fullServices = [
             "Mejora de la postura y seguridad motriz."
         ],
         icon: <Baby size={40} />,
+        image: "/nueva4f.webp",
         color: "text-brand-sunshine",
         bgColor: "bg-brand-sunshine/10",
         border: "border-brand-sunshine/20"
@@ -90,6 +95,7 @@ const fullServices = [
             "Manejo de tiempos para que los padres disfruten también."
         ],
         icon: <PartyPopper size={40} />,
+        image: "/nueva1f.webp",
         color: "text-brand-rojo",
         bgColor: "bg-brand-rojo/10",
         border: "border-brand-rojo/20"
@@ -105,12 +111,12 @@ const fullServices = [
             "Globoflexia y sorpresas mágicas."
         ],
         icon: <Gamepad2 size={40} />,
+        image: "/nueva2f.webp",
         color: "text-brand-celeste",
         bgColor: "bg-brand-celeste/10",
         border: "border-brand-celeste/20"
     }
 ];
-
 
 export default function ServiciosPage() {
     return (
@@ -186,7 +192,7 @@ export default function ServiciosPage() {
                                         <span className={`inline-block text-xl font-black ${currentTextColor} opacity-60 mb-8 uppercase tracking-[0.2em]`}>
                                             {service.tagline}
                                         </span>
-                                        <p className="text-gray-400 text-xl leading-snug mb-12 font-bold">
+                                        <p className="text-gray-600 font-bold text-xl leading-snug mb-12 leading-tight">
                                             {service.description}
                                         </p>
 
@@ -210,21 +216,28 @@ export default function ServiciosPage() {
                                 </div>
 
                                 <div className="lg:w-1/2 w-full flex justify-center">
-                                    <div className="relative w-full max-w-lg aspect-square rounded-[5rem] bg-gray-50 border-[12px] border-white shadow-2xl flex items-center justify-center p-12 overflow-hidden group">
-                                        <div className={`absolute inset-0 bg-immersive-gradient opacity-10 blur-3xl`} />
-                                        <div className="text-center relative z-10">
+                                    <div className="relative w-full max-w-lg aspect-square rounded-[5rem] bg-gray-50 border-[12px] border-white shadow-2xl overflow-hidden group">
+                                        <Image
+                                            src={service.image}
+                                            alt={service.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        />
+                                        <div className={`absolute inset-0 ${currentColor} opacity-10 group-hover:opacity-0 transition-opacity`} />
+
+                                        {/* Decorative Overlays */}
+                                        <div className="absolute top-6 left-6 w-20 h-20 bg-white/20 backdrop-blur-md rounded-full border border-white/30 z-10" />
+                                        <div className="absolute bottom-10 right-10 w-32 h-32 bg-brand-sunshine/10 backdrop-blur-md rounded-full border border-white/30 z-10" />
+
+                                        {/* Floating Sparkles for Magic Touch */}
+                                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
                                             <motion.div
-                                                animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.1, 1] }}
-                                                transition={{ duration: 5, repeat: Infinity }}
+                                                animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }}
+                                                transition={{ duration: 4, repeat: Infinity }}
                                             >
-                                                <Sparkles size={180} className={`${currentTextColor} opacity-20 mx-auto mb-10`} />
+                                                <Sparkles size={200} className="text-white opacity-20" />
                                             </motion.div>
-                                            <p className="text-brand-dark font-black text-4xl md:text-5xl uppercase tracking-tighter leading-none">
-                                                MOMENTO <br /> <span className={currentTextColor}>ESPACIAL</span>
-                                            </p>
                                         </div>
-                                        <div className="absolute top-6 left-6 w-20 h-20 bg-white/20 backdrop-blur-md rounded-full border border-white/30" />
-                                        <div className="absolute bottom-10 right-10 w-32 h-32 bg-brand-sunshine/10 backdrop-blur-md rounded-full border border-white/30" />
                                     </div>
                                 </div>
                             </motion.div>
