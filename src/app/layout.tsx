@@ -20,8 +20,8 @@ const fredoka = Fredoka({
 
 
 export const metadata: Metadata = {
-    title: "Miss Ely 💚 | Diversión Mágica y Aprendizaje",
-    description: "Animación profesional de eventos y educación inicial con amor y profesionalismo.",
+    title: "Miss Ely 💚 | Diversión Mágica y aprendizaje",
+    description: "Animación profesional de eventos y educación inicial con mucho amor y profesionalismo.",
 };
 
 export default function RootLayout({
