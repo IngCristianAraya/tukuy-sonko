@@ -81,8 +81,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t-4 border-gray-50 flex justify-center text-center">
-          <p className="text-gray-500 text-xs font-black uppercase tracking-[0.3em]">
+        <div className="pt-12 border-t-4 border-gray-50 flex flex-col items-center text-center gap-4">
+          <p className="text-brand-purple font-black text-xl uppercase tracking-widest">
+            "Aprender nunca fue tan entretenido"
+          </p>
+          <p className="text-gray-400 text-xs font-black uppercase tracking-[0.3em]">
             © 2026 Miss Ely • Diversión Mágica
           </p>
         </div>

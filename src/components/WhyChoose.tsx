@@ -108,6 +108,16 @@ const WhyChoose = () => {
                   );
                 })}
               </div>
+
+              {/* Bloque Pedagógico Mágico */}
+              <div className="mt-16 bg-brand-purple/5 p-10 rounded-[3rem] border-2 border-dashed border-brand-purple/20">
+                <p className="text-brand-purple font-black text-2xl leading-tight mb-4">
+                  "Inspirados en Montessori, Waldorf y Reggio Emilia... pero con nuestro toque travieso."
+                </p>
+                <p className="text-gray-500 font-bold text-lg italic">
+                  — Educación respetuosa y deliciosamente divertida.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>

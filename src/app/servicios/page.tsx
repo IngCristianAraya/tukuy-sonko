@@ -1,4 +1,5 @@
-"use client";
+
+// Re-triggering compilation to resolve potential SSR reference issues.
 
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
@@ -23,12 +24,12 @@ const fullServices = [
     {
         title: "Escuela en el Bosque",
         tagline: "Exploración y Naturaleza",
-        description: "Una propuesta educativa basada en la pedagogía al aire libre. Los niños desarrollan autonomía, resolución de problemas y conciencia ambiental mientras juegan en entornos naturales seguros.",
+        description: "Aprendemos jugando, porque jugando se aprende mejor (y se ensucia menos el sillón del salón). Fomentamos la curiosidad y el respeto por el medio ambiente en grupos reducidos.",
         details: [
             "Contacto directo con la flora y fauna local.",
-            "Actividades de psicomotricidad gruesa en terrenos naturales.",
-            "Fomento de la curiosidad y el respeto por el medio ambiente.",
-            "Grupos reducidos para atención personalizada."
+            "Actividades de psicomotricidad en terrenos naturales.",
+            "Fomento del respeto por el planeta.",
+            "Atención personalizada y segura."
         ],
         icon: <Home size={40} />,
         image: "/nueva1f.webp",
@@ -38,13 +39,13 @@ const fullServices = [
     },
     {
         title: "Teatro y Expresión",
-        tagline: "Creatividad y Confianza",
-        description: "A través del arte dramático, ayudamos a los niños a perder el miedo escénico, mejorar su dicción y expresar sus emociones de una manera saludable y creativa.",
+        tagline: "Historias que Mueven Hilos",
+        description: "Nuestros títeres hablan... ¡y dicen cosas inteligentes! Historias que mueven hilos y corazones, ayudando a los niños a perder el miedo escénico y expresar sus emociones.",
         details: [
             "Juegos de improvisación y mímica.",
-            "Creación de personajes y pequeñas historias.",
-            "Ejercicios de voz y respiración.",
-            "Presentaciones amigables para fortalecer la autoestima."
+            "Creación de personajes con valores.",
+            "Ejercicios de voz y confianza.",
+            "Presentaciones amigables y mágicas."
         ],
         icon: <UserRound size={40} />,
         image: "/nueva2f.webp",
@@ -54,13 +55,13 @@ const fullServices = [
     },
     {
         title: "Experimentos Divertidos",
-        tagline: "Ciencia para Pequeños Genios",
-        description: "La ciencia no tiene por qué ser aburrida. En estas sesiones, los niños descubren las leyes de la naturaleza mediante experimentos prácticos que pueden ver, tocar y sentir.",
+        tagline: "Ciencia con Chispa",
+        description: "El único show donde los experimentos explotan... pero de puro conocimiento científico. Descubre las leyes de la naturaleza sin chamuscarse las cejas.",
         details: [
-            "Creación de slime y masas sensoriales.",
-            "Demostraciones de reacciones químicas seguras (volcanes, burbujas).",
-            "Introducción lúdica al método científico.",
-            "Kit de materiales incluidos para cada sesión."
+            "Creación de masas sensoriales.",
+            "Reacciones químicas sorprendentes y seguras.",
+            "Iniciación lúdica al método científico.",
+            "Kit de materiales mágicos incluido."
         ],
         icon: <FlaskConical size={40} />,
         image: "/nueva3f.webp",
@@ -70,13 +71,13 @@ const fullServices = [
     },
     {
         title: "Expresión Corporal",
-        tagline: "Movimiento y Armonía",
-        description: "Enfocado en el desarrollo psicomotriz fino y grueso. Ayudamos a los niños a conocer sus límites físicos y a coordinar sus movimientos con música y juegos rítmicos.",
+        tagline: "Creatividad sin Cables",
+        description: "Aquí el cuerpo también tiene voz (y a veces hace cosquillas). Movimiento libre enfocado en el desarrollo psicomotriz fino y grueso a través del juego.",
         details: [
             "Danza creativa y ritmos infantiles.",
-            "Circuitos de obstáculos y equilibrio.",
-            "Yoga para niños y técnicas de relajación.",
-            "Mejora de la postura y seguridad motriz."
+            "Circuitos de obstáculos divertidos.",
+            "Yoga para niños y relajación.",
+            "Seguridad motriz y equilibrio."
         ],
         icon: <Baby size={40} />,
         image: "/nueva4f.webp",
@@ -86,13 +87,13 @@ const fullServices = [
     },
     {
         title: "Animación de Eventos",
-        tagline: "Fiestas Inolvidables",
-        description: "Hacemos que tu evento sea la charla del barrio. Animación profesional que incluye música, coreografías, juegos integradores y mucha magia.",
+        tagline: "Energía sin Café",
+        description: "Eventos tan divertidos que hasta los padres participan. Animamos fiestas con humor, energía y cero momentos incómodos. Shows temáticos personalizados.",
         details: [
-            "Shows temáticos personalizados.",
-            "Equipo de sonido y luces profesionales.",
-            "Organización de concursos y entrega de premios.",
-            "Manejo de tiempos para que los padres disfruten también."
+            "Coreografías y juegos integradores.",
+            "Equipo de sonido profesional.",
+            "Concursos divertidos y premios.",
+            "Diversión para niños y tranquilidad para padres."
         ],
         icon: <PartyPopper size={40} />,
         image: "/nueva1f.webp",
@@ -102,12 +103,12 @@ const fullServices = [
     },
     {
         title: "Baby Showers y Más",
-        tagline: "Calidez en Momentos Especiales",
-        description: "Acompañamos a las familias en la dulce espera y en celebraciones familiares grandes, asegurando que los niños invitados se sientan parte importante del evento.",
+        tagline: "Diversión con Contenido",
+        description: "Como las verduras escondidas en la pizza: educación sin que se den cuenta. Dinámicas especiales sin burlas para celebrar la dulce espera en familia.",
         details: [
-            "Dinámicas especiales para Baby Showers (sin burlas).",
-            "Rincón infantil para bodas y eventos de adultos.",
-            "Maquillaje artístico profesional (Facepainting).",
+            "Dinámicas respetuosas y tiernas.",
+            "Rincón infantil para eventos grandes.",
+            "Maquillaje artístico profesional.",
             "Globoflexia y sorpresas mágicas."
         ],
         icon: <Gamepad2 size={40} />,

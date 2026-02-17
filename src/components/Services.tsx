@@ -18,7 +18,7 @@ import {
 const services = [
   {
     title: "Escuela en el Bosque",
-    description: "Aprendizaje lúdico y contacto directo con la naturaleza para el desarrollo motriz.",
+    description: "Aprendemos jugando, porque jugando se aprende mejor (y se ensucia menos el sillón del salón).",
     icon: <Home size={32} />,
     color: "bg-brand-naranja",
     image: "/nueva1f.webp",
@@ -26,7 +26,7 @@ const services = [
   },
   {
     title: "Teatro y Expresión",
-    description: "Talleres divertidos para potenciar la confianza y creatividad infantil.",
+    description: "Nuestros títeres hablan... ¡y dicen cosas inteligentes! Historias que mueven hilos y corazones.",
     icon: <UserRound size={32} />,
     color: "bg-brand-lila",
     image: "/nueva2f.webp",
@@ -34,7 +34,7 @@ const services = [
   },
   {
     title: "Ciencia Divertida",
-    description: "Experimentos sorprendentes y seguros para pequeños científicos curiosos.",
+    description: "El único show donde los experimentos explotan... pero de puro conocimiento científico sorprendente.",
     icon: <FlaskConical size={32} />,
     color: "bg-brand-verde_claro",
     image: "/nueva3f.webp",
@@ -42,23 +42,23 @@ const services = [
   },
   {
     title: "Expresión Corporal",
-    description: "Movimiento y psicomotricidad a través del juego y la música.",
+    description: "Aquí el cuerpo también tiene voz (y a veces hace cosquillas). ¡Movimiento libre y sin cables!",
     icon: <Baby size={32} />,
     color: "bg-brand-rosa",
     image: "/nueva4f.webp",
     href: "/reserva"
   },
   {
-    title: "Animación de Eventos",
-    description: "Shows temáticos y divertidos para cumpleaños y fiestas infantiles.",
+    title: "Animación Mágica",
+    description: "Eventos tan divertidos que hasta los padres participan. Animamos sin necesidad de café.",
     icon: <PartyPopper size={32} />,
     color: "bg-brand-rojo",
     image: "/nueva1f.webp",
     href: "/reserva"
   },
   {
-    title: "Baby Showers",
-    description: "Momentos tiernos y juegos pensados para toda la familia y amigos.",
+    title: "Shows Temáticos",
+    description: "Diversión con contenido: como las verduras escondidas en la pizza. ¡Educación sin que se den cuenta!",
     icon: <Gamepad2 size={32} />,
     color: "bg-brand-celeste",
     image: "/nueva2f.webp",
