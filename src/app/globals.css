@@ -76,3 +76,12 @@ body {
     radial-gradient(at 100% 100%, hsla(199, 98%, 48%, 0.1) 0px, transparent 50%),
     radial-gradient(at 0% 100%, hsla(291, 64%, 42%, 0.1) 0px, transparent 50%);
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

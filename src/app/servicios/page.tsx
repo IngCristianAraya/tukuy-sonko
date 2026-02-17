@@ -1,6 +1,3 @@
-
-// Re-triggering compilation to resolve potential SSR reference issues.
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -18,8 +15,12 @@ import {
     CheckCircle2,
     MessageCircle,
     Sparkles,
-    Heart
+    Heart,
+    ChevronRight,
+    ChevronDown
 } from "lucide-react";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const fullServices = [
@@ -122,6 +123,8 @@ const fullServices = [
 ];
 
 export default function ServiciosPage() {
+    const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
     return (
         <main className="min-h-screen bg-white pb-24 md:pb-12">
             <Navbar />
@@ -144,7 +147,7 @@ export default function ServiciosPage() {
                     >
                         <h1 className="text-6xl md:text-[8rem] font-black text-white mb-6 leading-none tracking-tighter drop-shadow-2xl">
                             NUESTROS <br />
-                            <span className="text-brand-sunshine">SERVICIOS</span>
+                            <span className="text-brand-sunshine-dark">SERVICIOS</span>
                         </h1>
                         <p className="font-handwritten text-4xl md:text-7xl text-white mb-8 transform -rotate-2 drop-shadow-lg">
                             &quot;Educación y Diversión Mágica&quot;
@@ -155,7 +158,7 @@ export default function ServiciosPage() {
 
             {/* Grid Detallado Inmersivo */}
             <section className="py-24 px-6 md:px-12">
-                <div className="container mx-auto space-y-32 md:space-y-48">
+                <div className="container mx-auto flex flex-row items-start overflow-x-auto md:flex-col snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 no-scrollbar gap-8 md:gap-32 lg:gap-48">
                     {fullServices.map((service, index) => {
                         const colors = [
                             "bg-brand-sunshine",
@@ -166,7 +169,7 @@ export default function ServiciosPage() {
                             "bg-brand-blue"
                         ];
                         const textColors = [
-                            "text-brand-sunshine",
+                            "text-brand-sunshine-dark",
                             "text-brand-sky",
                             "text-brand-joy",
                             "text-brand-leaf",
@@ -182,10 +185,10 @@ export default function ServiciosPage() {
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-24 items-center`}
+                                className={`flex flex-col-reverse ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-24 items-center shrink-0 w-[92%] md:w-full snap-center mb-12 md:mb-0`}
                             >
                                 <div className="lg:w-1/2 w-full">
-                                    <div className={`p-10 md:p-16 bg-white border-[8px] border-gray-50 rounded-[4rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] relative overflow-hidden group transition-all`}>
+                                    <div className={`p-7 md:p-16 bg-white border-[8px] border-gray-50 rounded-[4rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] relative overflow-hidden group transition-all`}>
                                         <div className={`${currentTextColor} mb-12 scale-[2] origin-left drop-shadow-sm`}>
                                             {service.icon}
                                         </div>
@@ -199,14 +202,40 @@ export default function ServiciosPage() {
                                             {service.description}
                                         </p>
 
-                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
-                                            {service.details.map((detail, idx) => (
-                                                <li key={idx} className="flex items-start gap-4 bg-gray-50 p-5 rounded-3xl group/item hover:bg-white hover:shadow-lg transition-all border-2 border-transparent hover:border-gray-100">
-                                                    <CheckCircle2 size={24} className={`${currentTextColor} shrink-0`} />
-                                                    <span className="text-brand-dark font-black text-base leading-tight">{detail}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                        <button
+                                            onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                                            className={`flex items-center justify-between w-full p-6 bg-gray-50 rounded-3xl mb-8 group transition-all border-2 border-transparent hover:border-${currentColor.split('-')[1]}/30`}
+                                        >
+                                            <span className="font-black text-lg text-brand-dark flex items-center gap-2">
+                                                <Sparkles size={20} className={currentTextColor} />
+                                                ¿En qué consiste el servicio?
+                                            </span>
+                                            <motion.div
+                                                animate={{ rotate: expandedIndex === index ? 180 : 0 }}
+                                            >
+                                                <ChevronRight size={24} className={currentTextColor} />
+                                            </motion.div>
+                                        </button>
+
+                                        <AnimatePresence>
+                                            {expandedIndex === index && (
+                                                <motion.div
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+                                                        {service.details.map((detail, idx) => (
+                                                            <li key={idx} className="flex items-start gap-4 bg-gray-50/50 p-5 rounded-3xl group/item hover:bg-white hover:shadow-lg transition-all border-2 border-transparent hover:border-gray-100">
+                                                                <CheckCircle2 size={24} className={`${currentTextColor} shrink-0`} />
+                                                                <span className="text-brand-dark font-bold text-base leading-tight">{detail}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
 
                                         <Link
                                             href="/reserva"
@@ -219,7 +248,7 @@ export default function ServiciosPage() {
                                 </div>
 
                                 <div className="lg:w-1/2 w-full flex justify-center">
-                                    <div className="relative w-full max-w-lg aspect-square rounded-[5rem] bg-gray-50 border-[12px] border-white shadow-2xl overflow-hidden group">
+                                    <div className="relative w-full max-w-lg aspect-video md:aspect-square rounded-[3rem] md:rounded-[5rem] bg-gray-50 border-[8px] md:border-[12px] border-white shadow-2xl overflow-hidden group">
                                         <Image
                                             src={service.image}
                                             alt={service.title}
@@ -228,9 +257,6 @@ export default function ServiciosPage() {
                                         />
                                         <div className={`absolute inset-0 ${currentColor} opacity-10 group-hover:opacity-0 transition-opacity`} />
 
-                                        {/* Decorative Overlays */}
-                                        <div className="absolute top-6 left-6 w-20 h-20 bg-white/20 backdrop-blur-md rounded-full border border-white/30 z-10" />
-                                        <div className="absolute bottom-10 right-10 w-32 h-32 bg-brand-sunshine/10 backdrop-blur-md rounded-full border border-white/30 z-10" />
 
                                         {/* Floating Sparkles for Magic Touch */}
                                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">

@@ -7,6 +7,7 @@ export default {
         brand: {
           bg: '#FFFFFF',
           sunshine: '#FFD600', // Amarillo vibrante
+          'sunshine-dark': '#B8860B', // Darker yellow for accessibility on white
           sky: '#00B0FF', // Azul cian
           joy: '#FF4081', // Rosa neón
           leaf: '#76FF03', // Verde lima
@@ -41,4 +42,3 @@ export default {
 
   plugins: [],
 };
-

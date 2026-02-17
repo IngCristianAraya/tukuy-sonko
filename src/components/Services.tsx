@@ -97,7 +97,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div className="flex items-start overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 pb-8 md:pb-0 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 no-scrollbar">
           {services.map((service, index) => {
             const colors = [
               "bg-brand-sunshine",
@@ -116,7 +116,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white border-[6px] border-gray-50 rounded-[4rem] p-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 group flex flex-col items-center text-center overflow-hidden"
+                className="bg-white border-[6px] border-gray-50 rounded-[4rem] p-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 group flex flex-col items-center text-center overflow-hidden shrink-0 w-[85%] sm:w-[60%] md:w-full snap-center"
               >
                 {/* Image Container with Floating Icon */}
                 <div className="relative w-full h-64 mb-8 group-hover:scale-105 transition-transform duration-500">
