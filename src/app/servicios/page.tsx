@@ -1,6 +1,8 @@
 
 // Re-triggering compilation to resolve potential SSR reference issues.
 
+"use client";
+
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
