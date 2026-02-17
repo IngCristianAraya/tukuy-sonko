@@ -68,6 +68,7 @@ const Navbar = () => {
                 <button
                     className="md:hidden w-12 h-12 flex items-center justify-center rounded-2xl bg-white shadow-sm text-brand-dark border-2 border-gray-50"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
                 >
                     {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>

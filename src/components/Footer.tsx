@@ -25,10 +25,10 @@ const Footer = () => {
               educación inicial y animación de eventos infantiles.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-14 h-14 rounded-[1.5rem] bg-brand-sky/10 flex items-center justify-center text-brand-sky hover:bg-brand-sky hover:text-white hover:scale-110 transition-all shadow-lg border-2 border-white">
+              <a href="https://instagram.com" aria-label="Instagram de Miss Ely" className="w-14 h-14 rounded-[1.5rem] bg-brand-sky/10 flex items-center justify-center text-brand-sky hover:bg-brand-sky hover:text-white hover:scale-110 transition-all shadow-lg border-2 border-white">
                 <Instagram size={28} />
               </a>
-              <a href="#" className="w-14 h-14 rounded-[1.5rem] bg-brand-joy/10 flex items-center justify-center text-brand-joy hover:bg-brand-joy hover:text-white hover:scale-110 transition-all shadow-lg border-2 border-white">
+              <a href="https://facebook.com" aria-label="Facebook de Miss Ely" className="w-14 h-14 rounded-[1.5rem] bg-brand-joy/10 flex items-center justify-center text-brand-joy hover:bg-brand-joy hover:text-white hover:scale-110 transition-all shadow-lg border-2 border-white">
                 <Facebook size={28} />
               </a>
             </div>
@@ -85,8 +85,8 @@ const Footer = () => {
           <p className="text-brand-purple font-black text-xl uppercase tracking-widest">
             "Aprender nunca fue tan entretenido"
           </p>
-          <p className="text-gray-400 text-xs font-black uppercase tracking-[0.3em]">
-            © 2026 Miss Ely • Diversión Mágica
+          <p className="text-gray-500 text-xs font-black uppercase tracking-[0.3em]">
+            © {currentYear} Miss Ely • Diversión Mágica
           </p>
         </div>
       </div>
