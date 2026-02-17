@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group relative z-[60]">
                     <motion.img
-                        src="/misselylogo.webp"
+                        src="/logoely.webp"
                         alt="Miss Ely Logo"
                         className="h-16 md:h-24 w-auto object-contain"
                         whileHover={{ scale: 1.05 }}

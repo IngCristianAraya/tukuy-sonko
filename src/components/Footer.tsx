@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="col-span-1 lg:col-span-1 flex flex-col items-center md:items-start">
             <Link href="/" className="block mb-8">
               <img
-                src="/misselylogo.webp"
+                src="/logoely.webp"
                 alt="Miss Ely Logo"
                 className="h-24 md:h-32 w-auto object-contain"
               />
