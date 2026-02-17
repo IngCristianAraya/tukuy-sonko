@@ -84,7 +84,7 @@ const Services = () => {
           >
             Mis Servicios <span className="text-brand-magenta">Mágicos</span>
           </motion.h2>
-          <p className="text-gray-400 font-bold text-xl md:text-2xl max-w-2xl mx-auto leading-tight">
+          <p className="text-gray-600 font-bold text-xl md:text-2xl max-w-2xl mx-auto leading-tight">
             Diseñamos experiencias únicas donde cada detalle cuenta para la sonrisa de tus pequeños.
           </p>
         </div>
@@ -115,7 +115,7 @@ const Services = () => {
                 </div>
 
                 <h3 className="text-3xl font-black text-brand-dark mb-4 tracking-tighter leading-none">{service.title}</h3>
-                <p className="text-gray-500 font-bold mb-10 leading-snug">
+                <p className="text-gray-600 font-bold mb-10 leading-snug">
                   {service.description}
                 </p>
 

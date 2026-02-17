@@ -31,6 +31,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="es" className="scroll-smooth">
+            <head>
+                <link rel="preconnect" href="https://tubarrio.pe" />
+                <link rel="dns-prefetch" href="https://tubarrio.pe" />
+            </head>
             <body className={`${fredoka.variable} ${quicksand.variable} ${caveat.variable} font-fredoka bg-white antialiased pb-24 md:pb-0 text-brand-dark`}>
                 {children}
                 <BottomNav />
