@@ -20,7 +20,7 @@ const Footer = () => {
                 className="h-24 md:h-32 w-auto object-contain"
               />
             </Link>
-            <p className="text-gray-500 font-bold leading-tight mb-10 text-lg max-w-sm">
+            <p className="text-gray-600 font-bold leading-tight mb-10 text-lg max-w-sm">
               Llevando magia y aprendizaje a cada rincón. Especialista en
               educación inicial y animación de eventos infantiles.
             </p>
@@ -37,10 +37,10 @@ const Footer = () => {
           <div>
             <h4 className="font-black text-brand-purple mb-10 uppercase tracking-[0.2em] text-sm">Explora</h4>
             <ul className="space-y-5">
-              <li><Link href="/" className="text-gray-400 hover:text-brand-sky font-black text-xl transition-all flex items-center justify-center md:justify-start gap-2 group">Inicio</Link></li>
-              <li><Link href="/servicios" className="text-gray-400 hover:text-brand-joy font-black text-xl transition-all flex items-center justify-center md:justify-start gap-2 group">Servicios</Link></li>
-              <li><Link href="/videos" className="text-gray-400 hover:text-brand-leaf font-black text-xl transition-all flex items-center justify-center md:justify-start gap-2 group">Videos</Link></li>
-              <li><Link href="/reserva" className="text-gray-400 hover:text-brand-sky font-black text-xl transition-all flex items-center justify-center md:justify-start gap-2 group">Reservar</Link></li>
+              <li><Link href="/" className="text-gray-600 hover:text-brand-sky font-black text-xl transition-all flex items-center justify-center md:justify-start gap-2 group">Inicio</Link></li>
+              <li><Link href="/servicios" className="text-gray-600 hover:text-brand-joy font-black text-xl transition-all flex items-center justify-center md:justify-start gap-2 group">Servicios</Link></li>
+              <li><Link href="/videos" className="text-gray-600 hover:text-brand-leaf font-black text-xl transition-all flex items-center justify-center md:justify-start gap-2 group">Videos</Link></li>
+              <li><Link href="/reserva" className="text-gray-600 hover:text-brand-sky font-black text-xl transition-all flex items-center justify-center md:justify-start gap-2 group">Reservar</Link></li>
             </ul>
           </div>
 
@@ -71,18 +71,18 @@ const Footer = () => {
             <div className="bg-gray-50/50 backdrop-blur-sm p-10 rounded-[4rem] border-4 border-white relative group overflow-hidden shadow-xl">
               <div className="absolute inset-0 bg-brand-sunshine/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
               <div className="relative z-10 text-center md:text-left">
-                <p className="text-[10px] text-brand-sky font-black mb-3 uppercase tracking-widest">Socio Estratégico</p>
+                <p className="text-[10px] text-brand-dark font-black mb-3 uppercase tracking-widest">Socio Estratégico</p>
                 <span className="text-3xl font-black text-brand-dark flex items-center justify-center md:justify-start gap-2 tracking-tighter">
-                  TuBarrio<span className="text-brand-sunshine">.pe</span>
+                  TuBarrio<span className="text-brand-magenta">.pe</span>
                 </span>
-                <p className="text-[10px] text-gray-400 font-bold mt-6 leading-tight">Impulsando el emprendimiento local con valores y mucha alegría.</p>
+                <p className="text-[10px] text-gray-700 font-bold mt-6 leading-tight">Impulsando el emprendimiento local con valores y mucha alegría.</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="pt-12 border-t-4 border-gray-50 flex justify-center text-center">
-          <p className="text-gray-300 text-xs font-black uppercase tracking-[0.3em]">
+          <p className="text-gray-500 text-xs font-black uppercase tracking-[0.3em]">
             © 2026 Miss Ely • Diversión Mágica
           </p>
         </div>

@@ -21,3 +21,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+.next/
+out/
+build/
+.DS_Store
+*.pem

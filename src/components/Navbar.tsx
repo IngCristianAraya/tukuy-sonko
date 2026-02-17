@@ -45,7 +45,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`font-black text-sm uppercase tracking-widest transition-colors ${isScrolled ? "text-brand-dark/70 hover:text-brand-sky" : "text-white hover:text-brand-sunshine"
+                            className={`font-black text-sm uppercase tracking-widest transition-colors ${isScrolled ? "text-brand-dark hover:text-brand-sky" : "text-white hover:text-brand-sunshine"
                                 }`}
                         >
                             {link.name}

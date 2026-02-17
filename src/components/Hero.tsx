@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Heart, Sparkles } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const FloatingIcon = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
   <motion.div
@@ -117,11 +118,16 @@ const Hero = () => {
               className="aspect-square bg-white/5 backdrop-blur-sm border-2 border-white/10 rounded-[2.5rem] md:rounded-[4rem] flex items-center justify-center relative overflow-hidden group shadow-2xl"
             >
               {img.src ? (
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                <div className="absolute inset-0 w-full h-full">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    priority={i < 2} // First two images get priority
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
               ) : (
                 <>
                   <div className="absolute inset-0 bg-gradient-to-tr from-brand-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

@@ -103,7 +103,7 @@ const WhyChoose = () => {
                         <div className="scale-125">{feature.icon}</div>
                       </div>
                       <h4 className="text-2xl font-black text-brand-dark mb-3 leading-none">{feature.title}</h4>
-                      <p className="text-gray-400 font-bold text-base leading-snug">{feature.description}</p>
+                      <p className="text-gray-600 font-bold text-base leading-snug">{feature.description}</p>
                     </motion.div>
                   );
                 })}

@@ -39,7 +39,7 @@ const BottomNav = () => {
                                 >
                                     {item.icon}
                                 </motion.div>
-                                <span className={`text-[11px] font-black ${isActive ? "text-brand-sunshine" : "text-gray-400"}`}>
+                                <span className={`text-[11px] font-black ${isActive ? "text-brand-sunshine" : "text-gray-500"}`}>
                                     {item.name}
                                 </span>
                             </Link>
@@ -54,11 +54,11 @@ const BottomNav = () => {
                         >
                             <motion.div
                                 whileTap={{ scale: 0.9 }}
-                                className={`p-1 transition-colors ${isActive ? item.activeColor : "text-gray-300"}`}
+                                className={`p-1 transition-colors ${isActive ? item.activeColor : "text-gray-500"}`}
                             >
                                 {item.icon}
                             </motion.div>
-                            <span className={`text-[11px] font-black ${isActive ? item.activeColor : "text-gray-400"}`}>
+                            <span className={`text-[11px] font-black ${isActive ? item.activeColor : "text-gray-500"}`}>
                                 {item.name}
                             </span>
                         </Link>
