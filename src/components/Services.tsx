@@ -125,6 +125,8 @@ const Services = () => {
                       src={service.image}
                       alt={service.title}
                       fill
+                      sizes="(max-width: 768px) 85vw, (max-width: 1200px) 50vw, 33vw"
+                      quality={70}
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     {/* Color Overlay */}

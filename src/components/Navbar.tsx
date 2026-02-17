@@ -34,6 +34,8 @@ const Navbar = () => {
                     <motion.img
                         src="/logoely.webp"
                         alt="Miss Ely Logo"
+                        width={168}
+                        height={82}
                         className="h-16 md:h-24 w-auto object-contain"
                         whileHover={{ scale: 1.05 }}
                     />

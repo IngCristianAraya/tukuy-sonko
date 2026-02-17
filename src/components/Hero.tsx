@@ -79,81 +79,6 @@ const Hero = () => {
           );
         })}
 
-        {/* Gran Galaxia de Globos REDONDOS (Estética de Ilustración) */}
-        {[...Array(25)].map((_, i) => {
-          const balloonColors = [
-            "#39FF14", // Verde vibrante
-            "#FF0080", // Magenta
-            "#FFD700", // Amarillo oro
-            "#00E5FF", // Cyan
-            "#7A28FF", // Morado
-            "#FF6B00"  // Naranja
-          ];
-          const color = balloonColors[i % balloonColors.length];
-          const size = Math.random() * 15 + 60; // 60px to 75px
-
-          return (
-            <motion.div
-              key={`balloon-round-${i}`}
-              initial={{
-                left: Math.random() * 90 + 5 + "%",
-                top: `${Math.random() * 100 + 100}%`, // Some start lower than others
-                scale: 1,
-              }}
-              animate={{
-                y: ["0%", "-250%"],
-                x: ["0%", (Math.random() - 0.5) * 60 + "%"],
-                rotate: [0, 5, -5, 0]
-              }}
-              transition={{
-                duration: 20 + Math.random() * 20,
-                repeat: Infinity,
-                ease: "linear",
-                delay: Math.random() * -20 // Start at different points in their animation
-              }}
-              className="absolute z-10"
-            >
-              <div className="relative flex flex-col items-center">
-                {/* Balloon Body - PERFECTLY ROUND */}
-                <div
-                  className="rounded-full border-[3px] border-[#2D1B1B] relative shadow-lg"
-                  style={{
-                    backgroundColor: color,
-                    width: `${size}px`,
-                    height: `${size * 1.1}px`, // Slightly taller for natural look
-                  }}
-                >
-                  {/* Glossy Highlights */}
-                  <div className="absolute top-[15%] left-[20%] w-[30%] h-[20%] bg-white/40 rounded-full blur-[1px]" />
-                  <div className="absolute top-[30%] left-[15%] w-[15%] h-[10%] bg-white/20 rounded-full" />
-
-                  {/* Knot at the bottom center */}
-                  <div
-                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-3 border-[3px] border-[#2D1B1B]"
-                    style={{
-                      backgroundColor: color,
-                      clipPath: "polygon(50% 100%, 0 0, 100% 0)"
-                    }}
-                  />
-                </div>
-
-                {/* Wavy String */}
-                <svg width="20" height="80" viewBox="0 0 20 80" className="-mt-1 opacity-50">
-                  <motion.path
-                    d="M10,0 Q15,20 10,40 T10,80"
-                    fill="none"
-                    stroke="#2D1B1B"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    animate={{ d: ["M10,0 Q15,20 10,40 T10,80", "M10,0 Q5,20 10,40 T10,80", "M10,0 Q15,20 10,40 T10,80"] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  />
-                </svg>
-              </div>
-            </motion.div>
-          );
-        })}
-
         {/* Static decorative background blobs (Far back) */}
         <div className="absolute inset-0 z-[-1] opacity-30">
           <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-brand-magenta/40 rounded-full blur-[120px]" />
@@ -241,6 +166,7 @@ const Hero = () => {
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"
                     priority={i < 2} // First two images get priority
+                    quality={75}
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>

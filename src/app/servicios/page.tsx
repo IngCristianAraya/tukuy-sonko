@@ -253,6 +253,8 @@ export default function ServiciosPage() {
                                             src={service.image}
                                             alt={service.title}
                                             fill
+                                            sizes="(max-width: 768px) 92vw, 50vw"
+                                            quality={75}
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                         <div className={`absolute inset-0 ${currentColor} opacity-10 group-hover:opacity-0 transition-opacity`} />
